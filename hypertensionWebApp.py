@@ -57,21 +57,22 @@ if st.button("Predict"):
     st.success(f"Prediction: {'Hypertensive' if prediction == 1 else 'Not Hypertensive'}")
 
 
-st.write("""How so we score
-🎯 What Matters Most in Predicting High Blood Pressure?
-Imagine each thing about a person gives the model some points to help it decide if someone might have high blood pressure. The more points, the more important that thing is!
+st.write("""
+### Feature Importance Scores
 
-Here’s how many points each factor gets out of 100 total:
+Each feature contributes differently to the model's prediction. The following are the top features and their relative importance (as determined by the model):
 
-🧠 Health Factor	🎮 Importance Score
-🩸 Blood Pressure History	⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ (29 points)
-👪 Family History	⭐️⭐️⭐️⭐️ (14 points)
-🎂 Age	⭐️⭐️⭐️⭐️ (13 points)
-😰 Stress Score	⭐️⭐️⭐️⭐️ (11 points)
-🚬 Smoking	⭐️⭐️⭐️⭐️ (11 points)
-🧂 Salt Intake	⭐️⭐️⭐️⭐️ (8 points)
-💤 Sleep Time	⭐️⭐️⭐️ (7 points)
-⚖️ BMI (Body Size)	⭐️⭐️⭐️ (7 points)
-🏃 Exercise Level	⭐️ (less than 1 point)
-💊 Medication Type	⭐️ (less than 1 point)
-         """)
+-**🩸 Blood Pressure History:**	⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ (29 points)
+-**👪 Family History:**	⭐️⭐️⭐️⭐️ (14 points)
+-**🎂 Age:**	⭐️⭐️⭐️⭐️ (13 points)
+-**😰 Stress Score:**	⭐️⭐️⭐️⭐️ (11 points)
+-**🚬 Smoking:**	⭐️⭐️⭐️⭐️ (11 points)
+-**🧂 Salt Intake:**	⭐️⭐️⭐️⭐️ (8 points)
+-**💤 Sleep Time:**	⭐️⭐️⭐️ (7 points)
+-**⚖️ BMI (Body Size):**	⭐️⭐️⭐️ (7 points)
+-**🏃 Exercise Level:**	⭐️ (less than 1 point)
+-**💊 Medication Type:**	⭐️ (less than 1 point)
+
+Higher percentages indicate a stronger influence on the prediction. These scores help highlight which factors are most critical in assessing hypertension risk.
+""")
+
