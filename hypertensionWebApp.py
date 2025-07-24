@@ -44,6 +44,19 @@ input_dict = {
     'Smoking_Status_Smoker': 1 if smoking == "Smoker" else 0
 }
 
+
+# Ensure all features exist
+for col in features:
+    if col not in input_dict:
+        input_dict[col] = 0  # Default value for missing dummies
+
+input_df = pd.DataFrame([input_dict])[features]
+
+if st.button("Predict"):
+    prediction = model.predict(input_df)[0]
+    st.success(f"Prediction: {'Hypertensive' if prediction == 1 else 'Not Hypertensive'}")
+
+
 st.write("""
 ### Feature Importance Scores
 
@@ -62,14 +75,3 @@ Each feature contributes differently to the model's prediction. The following ar
 
 Higher percentages indicate a stronger influence on the prediction. These scores help highlight which factors are most critical in assessing hypertension risk.
 """)
-
-# Ensure all features exist
-for col in features:
-    if col not in input_dict:
-        input_dict[col] = 0  # Default value for missing dummies
-
-input_df = pd.DataFrame([input_dict])[features]
-
-if st.button("Predict"):
-    prediction = model.predict(input_df)[0]
-    st.success(f"Prediction: {'Hypertensive' if prediction == 1 else 'Not Hypertensive'}")
