@@ -9,6 +9,26 @@ features = joblib.load("model_features.pkl")
 
 st.title("🩺 Hypertension Risk Prediction")
 st.write("Enter the patient's lifestyle & medical details:")
+# ...existing code...
+
+st.write("""
+### Feature Importance Scores
+
+Each feature contributes differently to the model's prediction. The following are the top features and their relative importance (as determined by the model):
+
+- **BP History:** 29.4%
+- **Family History:** 13.6%
+- **Age:** 12.8%
+- **Stress Score:** 10.7%
+- **Smoking Status:** 10.6%
+- **Salt Intake:** 8.5%
+- **Sleep Duration:** 7.1%
+- **BMI:** 7.0%
+- **Exercise Level:** 0.2%
+- **Medication:** 0.18%
+
+Higher percentages indicate a stronger influence on the prediction. These scores help highlight which factors are most critical in assessing hypertension risk.
+""")
 
 # User Inputs
 age = st.slider("Age", 18, 100, 30)
