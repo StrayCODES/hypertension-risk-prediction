@@ -43,7 +43,26 @@ input_dict = {
     'Exercise_Level_Moderate': 1 if exercise_level == "Moderate" else 0,
     'Smoking_Status_Smoker': 1 if smoking == "Smoker" else 0
 }
+st.write("""
+### Feature Importance Scores
 
+
+Each feature contributes differently to the model's prediction. The following are the top features and their relative importance (as determined by the model):
+
+- **🩸 Blood Pressure History:**	⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ (29 points)
+- **👪 Family History:**	⭐️⭐️⭐️⭐️ (14 points)
+- **🎂 Age:**	⭐️⭐️⭐️⭐️ (13 points)
+- **😰 Stress Score:**	⭐️⭐️⭐️⭐️ (11 points)
+- **🚬 Smoking:**	⭐️⭐️⭐️⭐️ (11 points)
+- **🧂 Salt Intake:**	⭐️⭐️⭐️⭐️ (8 points)
+- **💤 Sleep Time:**	⭐️⭐️⭐️ (7 points)
+- **⚖️ BMI (Body Size):**	⭐️⭐️⭐️ (7 points)
+- **🏃 Exercise Level:**	⭐️ (less than 1 point)
+- **💊 Medication Type:**	⭐️ (less than 1 point)
+
+
+Higher percentages indicate a stronger influence on the prediction. These scores help highlight which factors are most critical in assessing hypertension risk.
+""")
 
 # Ensure all features exist
 for col in features:
@@ -55,24 +74,3 @@ input_df = pd.DataFrame([input_dict])[features]
 if st.button("Predict"):
     prediction = model.predict(input_df)[0]
     st.success(f"Prediction: {'Hypertensive' if prediction == 1 else 'Not Hypertensive'}")
-
-
-st.write("""
-### Feature Importance Scores
-
-Each feature contributes differently to the model's prediction. The following are the top features and their relative importance (as determined by the model):
-
--**🩸 Blood Pressure History:**	⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ (29 points)
--**👪 Family History:**	⭐️⭐️⭐️⭐️ (14 points)
--**🎂 Age:**	⭐️⭐️⭐️⭐️ (13 points)
--**😰 Stress Score:**	⭐️⭐️⭐️⭐️ (11 points)
--**🚬 Smoking:**	⭐️⭐️⭐️⭐️ (11 points)
--**🧂 Salt Intake:**	⭐️⭐️⭐️⭐️ (8 points)
--**💤 Sleep Time:**	⭐️⭐️⭐️ (7 points)
--**⚖️ BMI (Body Size):**	⭐️⭐️⭐️ (7 points)
--**🏃 Exercise Level:**	⭐️ (less than 1 point)
--**💊 Medication Type:**	⭐️ (less than 1 point)
-
-Higher percentages indicate a stronger influence on the prediction. These scores help highlight which factors are most critical in assessing hypertension risk.
-""")
-
