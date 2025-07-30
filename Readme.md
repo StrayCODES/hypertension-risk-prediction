@@ -102,7 +102,7 @@ Based on model findings, the following interventions are recommended for individ
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/yourusername/hypertension-risk-prediction.git
+    git clone https://github.com/StrayCODES/hypertension-risk-prediction.git
     cd hypertension-risk-prediction
     ```
 
